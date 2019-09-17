@@ -5,10 +5,7 @@ examples/
 lib/
 !lib/src
 netsuite/
-src/
 test/
 docker-compose.yml
-tsconfig.json
-tslint.json
 yarn.lock
 yarn-error.log
