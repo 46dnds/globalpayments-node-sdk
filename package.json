@@ -6,7 +6,7 @@
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/globalpayments/node-sdk.git"
+    "url": "https://github.com/technosolutionscl/globalpayments-node-sdk.git"
   },
   "main": "./lib/src/index.js",
   "typings": "./lib/src/index",
