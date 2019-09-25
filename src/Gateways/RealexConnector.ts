@@ -795,9 +795,8 @@ export class RealexConnector extends XmlGateway implements IRecurringService {
         throw new UnsupportedTransactionError();
     }
   }
-
   protected numberFormat(amount: number | string) {
     const f = parseFloat(amount.toString()) * 100;
-    return parseFloat(f.toFixed(2)).toString();
+    return parseInt(f.toString()).toString();
   }
 }
