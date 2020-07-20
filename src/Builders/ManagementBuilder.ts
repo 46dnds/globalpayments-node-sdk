@@ -101,6 +101,20 @@ export class ManagementBuilder extends TransactionBuilder<Transaction> {
     return this;
   }
 
+
+    /**
+     * Sets the refund authcode.
+     *
+     * @param a The authCoe
+     * @returns ManagementBuilder
+     */
+    public withAuthCode(a?: string | number) {
+      if (a !== undefined) {
+        this.paymentMethod.authCode=a;
+      }
+      return this;
+  };
+
   /**
    * Sets the current transaction's authorized amount; where applicable.
    *
