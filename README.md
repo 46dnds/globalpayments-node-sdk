@@ -80,6 +80,25 @@ card
   });
 ```
 
+#### Process a Refund(rebate)
+
+```javascript
+config.rebatePassword = 'rebate'; //use your own
+const refund=Transaction.fromId('TRANSACTION_ID','REFERENCE_ORDER_ID');
+refund
+  .refund('129.99')
+  .withAuthCode('AUTH_CODE')
+	.withCurrency('EUR')
+	.execute()
+  .then((response) => {
+    const result = response.responseCode;
+    const message = response.responseMessage;
+  })
+  .catch((e) => {
+    // handle  errors
+  });
+```
+
 #### Test Card Data
 
 | Name        | Number           | Exp Month | Exp Year | CVN  |
