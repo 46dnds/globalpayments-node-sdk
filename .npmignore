@@ -1,11 +1,4 @@
 .vscode/
-bin/
-config/
-examples/
 lib/
 !lib/src
-netsuite/
-test/
-docker-compose.yml
-yarn.lock
 yarn-error.log
