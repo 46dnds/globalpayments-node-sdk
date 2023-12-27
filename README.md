@@ -41,7 +41,7 @@ Installing the SDK into your solution is usually be done by either using NPM or 
 To install via [NPM](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```
-npm install --save globalpayments-api
+npm install --save 46dnds-globalpayments
 ```
 
 To install via [Yarn](https://yarnpkg.com/lang/en/docs/installing-dependencies/):
@@ -52,7 +52,7 @@ yarn add globalpayments-api
 
 ## Documentation and Examples
 
-You can find the latest SDK documentation along with code examples and test cards on the [Global Payments](https://developer.realexpayments.com) and [Heartland](https://developer.heartlandpaymentsystems.com/documentation) Developer Hubs.
+You can find the latest SDK documentation along with code examples and test cards on the [Global Payments - BROKEN LINK, expired since 2021!!](https://developer.realexpayments.com) and [Heartland](https://developer.heartlandpaymentsystems.com/documentation) Developer Hubs.
 
 In addition you can find working examples in the our example code repository.
 
@@ -61,6 +61,26 @@ _Quick Tip_: The included [test suite](https://github.com/globalpayments/node-sd
 #### Process a Payment Example
 
 ```javascript
+//setting config
+const
+sandbox	= true,
+{
+  Address,
+  CreditCardData,
+  ServicesConfig,
+  ServicesContainer,
+  HostedPaymentConfig,
+  Transaction
+} = require('46dnds-globalpayments');
+
+const config = new ServicesConfig();
+config.merchantId 		= "YOUR MERCHANT ID";
+config.accountId 		= "YOUR ACCOUNT ID";
+config.sharedSecret 		= "YOUR SUPER SECRET";
+config.serviceUrl 		= "https://api."+(sandbox?'sandbox.':'')+"realexpayments.com/epage-remote.cgi";
+ServicesContainer.configure(config);
+
+
 const card = new CreditCardData();
 card.number = "4111111111111111";
 card.expMonth = "12";
