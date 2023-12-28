@@ -1,4 +1,4 @@
-const HttpsProxyAgent = require('https-proxy-agent');
+import { HttpsProxyAgent } from 'https-proxy-agent';
 const fetch = require('node-fetch');
 import { ApiError, GatewayError } from "../Entities/Errors";
 const _fetch=(url: string,options: Object)=>{
