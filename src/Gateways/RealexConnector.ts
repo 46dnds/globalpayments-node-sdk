@@ -197,6 +197,12 @@ export class RealexConnector extends XmlGateway implements IRecurringService {
       subElement(tssInfo, "custipaddress").append(
         cData(builder.customerIpAddress),
       );
+      if (builder.billingAddress) {
+        const address = subElement(tssInfo, "address", { type: 'billing' });
+        subElement(address, "code").append(
+          cData(builder.billingAddress.postalCode+'|'+builder.billingAddress.streetAddress1),
+        );
+      }
     }
 
     if (builder.ecommerceInfo) {
